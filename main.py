@@ -61,18 +61,17 @@ def max_plosha(shapes):
     return MaxShape
 
 
-if __name__ == "__main__":
-    shapes = []
-    input_files = ["input01.txt", "input02.txt", "input03.txt" ]
+shapes = []
+input_files = ["input01.txt", "input02.txt", "input03.txt" ]
 
-    for file in input_files:
-        shapes.extend(read_shapes(file))
+for file in input_files:
+    shapes.extend(read_shapes(file))
 
-    MaxPerimeter = max_perimeter(shapes)
-    MaxPlosha = max_plosha(shapes)
+MaxPerimeter = max_perimeter(shapes)
+MaxPlosha = max_plosha(shapes)
 
-    with open("output.txt", "w") as f:
-        if MaxPerimeter:
-            f.write(f"max perimeter: {MaxPerimeter}\n")
-        if MaxPlosha:
-            f.write(f"max plosha: {MaxPlosha}\n")
+with open("output.txt", "w") as f:
+    if MaxPerimeter:
+        f.write(f"max perimeter: {MaxPerimeter}\n")
+    if MaxPlosha:
+        f.write(f"max plosha: {MaxPlosha}\n")
