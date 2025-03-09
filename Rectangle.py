@@ -3,9 +3,12 @@ class Rectangle:
         self.a = a
         self.b = b
 
-    # def perimeter(self):
 
-    # def plosha(self):
+    def perimeter(self):
+        return 2* (self.a + self.b)
+
+    def plosha(self):
+        return self.a * self.b
 
     def __str__(self):
         return f"{self.a}, {self.b}"
