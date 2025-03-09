@@ -1,3 +1,4 @@
+
 class Triangle:
 
     def __init__(self, a, b, c):
@@ -5,21 +6,33 @@ class Triangle:
         self.b = b
         self.c = c
 
+    def isReal(self):
+        return (self.a > 0 and self.b > 0 and 0 < self.c < self.a + self.b and
+                self.a + self.c > self.b and
+                self.b + self.c > self.a)
+
+
     def perimeter(self):
-        return self.a + self.b + self.c
+        if self.isReal():
+            return self.a + self.b + self.c
+        else:
+            return []
+
 
     def plosha(self):
-        P = self.perimeter()
-        p = P / 2
-        if self.a + self.b > self.c and self.a + self.c > self.b and self.b + self.c > self.a:
+        if self.isReal():
+            P = self.perimeter()
+            p = P / 2
             return (p * (p - self.a) * (p - self.b) * (p - self.c)) ** 0.5
         else:
-            return None
+            return []
 
     def __str__(self):
-        return f"{self.a}, {self.b}, {self.c}"
+        return f"Triangle: {self.a}, {self.b}, {self.c}"
 
 
 if __name__ == '__main__':
     t = Triangle(3, 4 ,5)
     print(t)
+    print(t.perimeter())
+    print(t.plosha())
