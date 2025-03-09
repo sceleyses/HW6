@@ -61,6 +61,14 @@ def max_plosha(shapes):
     return MaxShape
 
 
+def write_shapes(MaxPerimeter, MaxPlosha):
+    with open("output.txt", "w") as f:
+        if MaxPerimeter:
+            f.write(f"max perimeter: {MaxPerimeter}\n")
+        if MaxPlosha:
+            f.write(f"max plosha: {MaxPlosha}\n")
+
+
 shapes = []
 input_files = ["input01.txt", "input02.txt", "input03.txt" ]
 
@@ -69,9 +77,4 @@ for file in input_files:
 
 MaxPerimeter = max_perimeter(shapes)
 MaxPlosha = max_plosha(shapes)
-
-with open("output.txt", "w") as f:
-    if MaxPerimeter:
-        f.write(f"max perimeter: {MaxPerimeter}\n")
-    if MaxPlosha:
-        f.write(f"max plosha: {MaxPlosha}\n")
+write_shapes(MaxPerimeter, MaxPlosha)
