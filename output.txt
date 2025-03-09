@@ -1,0 +1,2 @@
+max perimeter: Circle: 25.0
+max plosha: Circle: 25.0
